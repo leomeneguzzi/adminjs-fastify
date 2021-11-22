@@ -8,8 +8,8 @@ import mime from "mime"
 import path from "path"
 import fs from "fs"
 
-const INVALID_ADMINJS_INSTANCE =
-  "You have to pass an instance of AdminJS to `adminRoute` plugin"
+// const INVALID_ADMINJS_INSTANCE =
+  // "You have to pass an instance of AdminJS to `adminRoute` plugin"
 
 export class WrongArgumentError extends Error {
   constructor(message: string) {
@@ -36,9 +36,9 @@ export const adminRoute: FastifyPluginAsync<AdminRouterOptions> = async (
   fastify,
   { admin, auth, multipartOptions, sessionOptions }
 ): Promise<void> => {
-  if (!(admin instanceof AdminJS)) {
-    throw new WrongArgumentError(INVALID_ADMINJS_INSTANCE)
-  }
+  // if (!(admin instanceof AdminJS)) {
+  //   throw new WrongArgumentError(INVALID_ADMINJS_INSTANCE)
+  // }
 
   admin.initialize().then(() => {
     fastify.log.debug("AdminJS: bundle ready")
